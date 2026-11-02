@@ -1,0 +1,28 @@
+[
+  {
+    "id": "f4a08fc7-762d-444f-b6d0-ef389695db89",
+    "title": "Plant growth in deifferent soils",
+    "activityId": "act-soil",
+    "durationMinutes": 25,
+    "steps": [
+      "1.Collect different types of soil (sand, clay and loam).",
+      "2.Put each soil type in a separate pot.",
+      "3.Plant the same type of seed in each pot.",
+      "4.Add the same amount of water to each pot.",
+      "5.Place all pots in the same sunlight.",
+      "6.Observe and measure plant growth daily.",
+      "7.Record the results and compare plant growth in different soils."
+    ],
+    "materials": [
+      "seeds",
+      "cups",
+      "sand",
+      "garden soil",
+      "water"
+    ],
+    "safetyNote": "wear garden gloves",
+    "version": 1,
+    "createdAt": "2026-10-30T22:50:21.489Z",
+    "receivedAt": "2026-10-30T23:12:27.210Z"
+  }
+]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEMMate – automated tests</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header"><h1>STEMMate – automated tests</h1></header>
+  <main id="main" tabindex="-1">
+    <p>These tests run by themselves when the page opens. Refresh the page to run them again. Each test name starts with the requirement it checks.</p>
+    <h2 id="summary" role="status">Running tests…</h2>
+    <table class="results" id="results">
+      <thead><tr><th scope="col">Result</th><th scope="col">Test</th><th scope="col">Detail</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+  <script src="core.js"></script>
+  <script src="localserver.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>

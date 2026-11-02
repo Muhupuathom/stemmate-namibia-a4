@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STEMMate – Session plans</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="app-header">
+    <h1>STEMMate</h1>
+    <p id="connection" class="connection" role="status"></p>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <p id="mode-note" class="mode-note" hidden>Simple mode: you opened this page as a file, so the "server" is simulated inside this browser. Plans are still kept after you close the browser. To use the real server, run <code>npm start</code> and open http://localhost:3000.</p>
+
+    <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+
+    <section aria-labelledby="create-heading" class="card">
+      <h2 id="create-heading">Create a session plan</h2>
+
+      <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden>
+        <h3>Please fix these problems:</h3>
+        <ul id="error-list"></ul>
+      </div>
+
+      <form id="plan-form" novalidate>
+        <div class="field">
+          <label for="title">Plan title</label>
+          <p id="title-hint" class="hint">For example: Balloon rocket race, Grade 6.</p>
+          <p id="title-error" class="field-error" hidden></p>
+          <input id="title" name="title" type="text" autocomplete="off" aria-describedby="title-hint title-error">
+        </div>
+
+        <div class="field">
+          <label for="activity">Linked activity (optional)</label>
+          <p id="activity-hint" class="hint">The list is saved on this device so it works offline.</p>
+          <p id="activity-error" class="field-error" hidden></p>
+          <select id="activity" name="activity" aria-describedby="activity-hint activity-error">
+            <option value="">No linked activity</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="duration">Duration in minutes</label>
+          <p id="duration-hint" class="hint">A whole number from 5 to 240.</p>
+          <p id="duration-error" class="field-error" hidden></p>
+          <input id="duration" name="duration" type="number" inputmode="numeric" min="5" max="240" aria-describedby="duration-hint duration-error">
+        </div>
+
+        <div class="field">
+          <label for="steps">Steps</label>
+          <p id="steps-hint" class="hint">Type one step on each line.</p>
+          <p id="steps-error" class="field-error" hidden></p>
+          <textarea id="steps" name="steps" rows="5" aria-describedby="steps-hint steps-error"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="materials">Materials (optional)</label>
+          <p id="materials-hint" class="hint">Separate items with commas or new lines.</p>
+          <p id="materials-error" class="field-error" hidden></p>
+          <textarea id="materials" name="materials" rows="3" aria-describedby="materials-hint materials-error"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="safety">Safety note</label>
+          <p id="safety-hint" class="hint">For example: Adults handle scissors.</p>
+          <p id="safety-error" class="field-error" hidden></p>
+          <textarea id="safety" name="safety" rows="2" aria-describedby="safety-hint safety-error"></textarea>
+        </div>
+
+        <p class="privacy-note">Privacy: do not type learner names, phone numbers or email addresses.</p>
+
+        <button type="submit" class="btn btn-primary">Save plan on this device</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="plans-heading" class="card">
+      <h2 id="plans-heading">Plans on this device</h2>
+      <p id="plans-summary" class="hint"></p>
+      <button type="button" id="sync-all" class="btn">Sync all now</button>
+      <p id="empty-state" class="hint">No plans on this device yet. Create one above.</p>
+      <ul id="plan-list" class="plan-list"></ul>
+    </section>
+
+    <section aria-labelledby="server-heading" class="card">
+      <h2 id="server-heading">Plans received by the server</h2>
+      <p id="server-note" class="hint"></p>
+      <button type="button" id="refresh-server" class="btn">Refresh list</button>
+      <ul id="server-list" class="server-list"></ul>
+    </section>
+
+    <section aria-labelledby="device-heading" class="card">
+      <h2 id="device-heading">This device</h2>
+      <p class="hint">On a shared device, remove saved plans when you finish. This is only allowed once every plan has synced, so nothing is lost.</p>
+      <button type="button" id="clear-device" class="btn">Remove saved plans from this device</button>
+    </section>
+
+    <details class="card demo">
+      <summary>Demo controls (for testing and the walkthrough)</summary>
+      <p class="hint">These switches only change this page. They do not touch your real connection.</p>
+      <label class="check"><input type="checkbox" id="demo-offline"> Pretend there is no connection</label>
+      <label class="check"><input type="checkbox" id="demo-fail"> Make the next sync attempt fail (switches itself off after one failure)</label>
+    </details>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Prototype for SDN621S. All activities and plans are synthetic sample data. Do not enter real learner information.</p>
+  </footer>
+
+  <script src="core.js"></script>
+  <script src="localserver.js"></script>
+  <script src="activities-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
