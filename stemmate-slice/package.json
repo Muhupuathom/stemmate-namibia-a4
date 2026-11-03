@@ -1,0 +1,13 @@
+{
+  "name": "stemmate-vertical-slice",
+  "version": "0.1.0",
+  "description": "STEMMate Namibia A4 vertical slice: create a session plan offline, sync it, recover from failure.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
